@@ -199,7 +199,21 @@ lvim.plugins = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
-    } }
+    } },
+  {
+    'dense-analysis/neural',
+    config = function()
+      require('neural').setup({
+        open_ai = {
+          api_key = os.getenv("OPENAI_API_KEY")
+        }
+      })
+    end,
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'ElPiloto/significant.nvim'
+    }
+  }
   --  {"prettier/vim-prettier"},
   --     {
   --       "folke/trouble.nvim",
