@@ -12,19 +12,18 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 lvim.colorscheme = "lunar"
-lvim.scrolloff = 13
+vim.opt.scrolloff = 13
+vim.opt.cmdheight = 3
 -- the return the
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+-- add your own keymapping test
+-- lvim.keys.normal_mode["<silent>s"] = ":w<cr>"
 lvim.keys.insert_mode.jk = "<ESC>"
 lvim.keys.insert_mode.kj = "<ESC>"
--- keymap("i", "jk", "<ESC>", opts) from nvim config, used for above line
--- keymap("i", "kj", "<ESC>", opts)
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -73,6 +72,9 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+-- Add keys for window split
+lvim.keys.normal_mode["|"] = ":vsplit<CR>"
+lvim.keys.normal_mode["-"] = ":split<CR>"
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -81,11 +83,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "javascript",
   "json",
   "lua",
-  "python",
-  "typescript",
+  --  "python",
+  --  "typescript",
   "tsx",
   "css",
-  "rust",
+  --  "rust",
   "java",
   "yaml",
 }
@@ -186,7 +188,18 @@ lvim.plugins = {
     run = "npm install --prefix server",
   },
   { "lunarvim/Onedarker.nvim" },
-  { "martinsione/darkplus.nvim" }
+  { "martinsione/darkplus.nvim" },
+  { "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    } }
   --  {"prettier/vim-prettier"},
   --     {
   --       "folke/trouble.nvim",
@@ -215,7 +228,12 @@ abbrev_man.setup({
   natural_dictionaries = {
     ["nt_en"] = {},
     ["nt_miss-typed"] = {
-      ["retrun"] = "return"
+      ["retru"] = "return",
+      ["retrun"] = "return",
+      ["childern"] = "children",
+      ["insted"] = "instead",
+      ["whait"] = "what",
+      ["waht"] = "what",
     }
   },
   programming_dictionaries = {
