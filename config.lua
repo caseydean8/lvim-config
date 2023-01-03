@@ -56,6 +56,7 @@ lvim.keys.insert_mode.kj = "<ESC>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTerm<CR>", "ToggleTerm" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
 --   r = { "<cmd>Trouble lsp_references<cr>", "References" },
@@ -200,20 +201,20 @@ lvim.plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     } },
-  {
-    'dense-analysis/neural',
-    config = function()
-      require('neural').setup({
-        open_ai = {
-          api_key = os.getenv("OPENAI_API_KEY")
-        }
-      })
-    end,
-    requires = {
-      'MunifTanjim/nui.nvim',
-      'ElPiloto/significant.nvim'
-    }
-  }
+  -- {
+  --   'dense-analysis/neural',
+  --   config = function()
+  --     require('neural').setup({
+  --       open_ai = {
+  --         api_key = os.getenv("OPENAI_API_KEY")
+  --       }
+  --     })
+  --   end,
+  --   requires = {
+  --     'MunifTanjim/nui.nvim',
+  --     'ElPiloto/significant.nvim'
+  --   }
+  -- }
   --  {"prettier/vim-prettier"},
   --     {
   --       "folke/trouble.nvim",
