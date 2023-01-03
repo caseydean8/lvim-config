@@ -77,6 +77,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
 
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -190,10 +191,12 @@ lvim.plugins = {
   },
   { "lunarvim/Onedarker.nvim" },
   { "martinsione/darkplus.nvim" },
+  { "EdenEast/nightfox.nvim" },
   { "jackMort/ChatGPT.nvim",
     config = function()
       require("chatgpt").setup({
         -- optional configuration
+        { max_line_length = 200 }
       })
     end,
     requires = {
