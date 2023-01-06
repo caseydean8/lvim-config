@@ -192,6 +192,8 @@ lvim.plugins = {
   { "lunarvim/Onedarker.nvim" },
   { "martinsione/darkplus.nvim" },
   { "EdenEast/nightfox.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
+  { "nyoom-engineering/oxocarbon.nvim" },
   { "jackMort/ChatGPT.nvim",
     config = function()
       require("chatgpt").setup({
@@ -252,10 +254,14 @@ abbrev_man.setup({
       ["insted"] = "instead",
       ["whait"] = "what",
       ["waht"] = "what",
+      ["cw"] = 'Console.WriteLine("")',
     }
   },
   programming_dictionaries = {
-    ["pr_py"] = {}
+    ["pr_py"] = {},
+    ["pr_snippets"] ={
+      ["cw"] = "Console.WriteLine",
+    }
   }
 
 })
