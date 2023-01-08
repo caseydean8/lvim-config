@@ -3,9 +3,14 @@
 -- local i = ls.insert_node
 
 return {
-  s("sd", { t "System.Diagnostics.Debug.WriteLine" }),
+  -- s("sd", { t "System.Diagnostics.Debug.WriteLine" }),
+  s("sd", fmt([[
+System.Diagnostics.Debug.WriteLine({})
+  ]], {
+    i(1),
+  })),
 
-  -- fmt() allows {} in first argument to be tabbed to correct position. 
+  -- fmt() allows {} in first argument to be tabbed to correct position.
   s("Pro", fmt([[
   {}
   {}

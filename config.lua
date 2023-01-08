@@ -256,6 +256,8 @@ abbrev_man.setup({
       ["whait"] = "what",
       ["waht"] = "what",
       ["cw"] = 'Console.WriteLine("")',
+      ["jjj"] = "∆",
+      ["sdd"] = "System.Diagnostics.Debug.WriteLine",
     }
   },
   programming_dictionaries = {
