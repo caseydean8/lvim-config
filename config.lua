@@ -25,6 +25,7 @@ lvim.leader = "space"
 lvim.keys.insert_mode.jk = "<ESC>"
 lvim.keys.insert_mode.kj = "<ESC>"
 lvim.keys.insert_mode[";;"] = "<ESC>A"
+lvim.keys.insert_mode.jj = "∆"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -199,7 +200,7 @@ lvim.plugins = {
     config = function()
       require("chatgpt").setup({
         -- optional configuration
-        { max_line_length = 200 }
+        -- { max_line_length = 200 }
       })
     end,
     requires = {
