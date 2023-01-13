@@ -26,7 +26,7 @@ lvim.keys.insert_mode.jk = "<ESC>"
 lvim.keys.insert_mode.kj = "<ESC>"
 lvim.keys.insert_mode[";;"] = "<ESC>A"
 lvim.keys.insert_mode.jj = "∆"
-lvim.keys.insert_mode["::"] = "<ESC>:"
+-- lvim.keys.insert_mode["::"] = "<ESC>:"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -85,6 +85,7 @@ lvim.keys.normal_mode["-"] = ":split<CR>"
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
+  "c_sharp",
   "javascript",
   "json",
   "lua",
@@ -99,6 +100,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- generic LSP settings
 
@@ -257,6 +259,7 @@ abbrev_man.setup({
       ["insted"] = "instead",
       ["whait"] = "what",
       ["waht"] = "what",
+      ["::"] = "<ESC>:",
       ["cw"] = 'Console.WriteLine("")',
       ["jjj"] = "∆",
       ["sdd"] = "System.Diagnostics.Debug.WriteLine",
@@ -270,3 +273,4 @@ abbrev_man.setup({
   }
 
 })
+

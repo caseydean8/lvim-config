@@ -29,4 +29,16 @@ System.Diagnostics.Debug.WriteLine({})
     t "}",
     t "}",
   })),
+
+  -- public static void Main(string[] args)
+  s("psvm", fmt([[
+  public static void Main(string[] args)
+  {}
+      {}
+  {}
+  ]], {
+    t "{",
+    i(1),
+    t "}"
+  }))
 }
