@@ -5,7 +5,7 @@
 return {
   -- s("sd", { t "System.Diagnostics.Debug.WriteLine" }),
   s("sd", fmt([[
-System.Diagnostics.Debug.WriteLine({})
+System.Diagnostics.Debug.WriteLine({});
   ]], {
     i(1),
   })),
@@ -40,5 +40,12 @@ System.Diagnostics.Debug.WriteLine({})
     t "{",
     i(1),
     t "}"
+  })),
+
+  -- Console.WriteLine();
+  s("Cw", fmt([[
+  Console.WriteLine({});
+  ]], {
+    i(1)
   }))
 }
