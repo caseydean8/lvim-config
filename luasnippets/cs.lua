@@ -29,6 +29,25 @@ System.Diagnostics.Debug.WriteLine({});
     t "}",
     t "}",
   })),
+-- class with Main() method
+  s("class w/Main", fmt([[
+  class {}
+  {}
+      public static void Main(String[] args)
+      {}
+          {}
+      {}
+  {}
+ ]], {
+    -- insert cursor, placeholder
+    i(1, "ClassNameHere"),
+    t "{",
+    t "{",
+    -- insert cursor
+    i(2),
+    t "}",
+    t "}",
+  })),
 
   -- public static void Main(string[] args)
   s("psvm", fmt([[
@@ -47,5 +66,18 @@ System.Diagnostics.Debug.WriteLine({});
   Console.WriteLine({});
   ]], {
     i(1)
-  }))
+  })),
+
+  --Debug.WriteLine();
+  s("dw", fmt([[
+  Debug.WriteLine({});
+  ]], {
+    i(1)
+  })),
+  -- Debug.WriteLine(String.Join(", ", collection));
+  s("dw Join", fmt([[
+  Debug.WriteLine(String.Join(", ", {}));
+  ]], {
+    i(1)
+  })),
 }

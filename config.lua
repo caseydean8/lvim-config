@@ -14,6 +14,7 @@ lvim.format_on_save.enabled = false
 lvim.colorscheme = "lunar"
 vim.opt.scrolloff = 13
 vim.opt.cmdheight = 3
+-- vim.opt.showcmd = "on"
 -- the return the
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -26,6 +27,7 @@ lvim.keys.insert_mode.jk = "<ESC>"
 lvim.keys.insert_mode.kj = "<ESC>"
 lvim.keys.insert_mode[";;"] = "<ESC>A"
 lvim.keys.insert_mode.jj = "∆"
+lvim.keys.insert_mode["<C-o>"] = "<ESC>vbc"
 -- lvim.keys.insert_mode["::"] = "<ESC>:"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -203,14 +205,14 @@ lvim.plugins = {
     config = function()
       require("chatgpt").setup({
         -- optional configuration
-        -- { max_line_length = 200 }
       })
     end,
     requires = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
-    } },
+    }
+  },
   -- {
   --   'dense-analysis/neural',
   --   config = function()
@@ -267,10 +269,9 @@ abbrev_man.setup({
   },
   programming_dictionaries = {
     ["pr_py"] = {},
-    ["pr_snippets"] ={
+    ["pr_snippets"] = {
       ["cw"] = "Console.WriteLine",
     }
   }
 
 })
-
