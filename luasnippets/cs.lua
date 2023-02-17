@@ -80,4 +80,6 @@ System.Diagnostics.Debug.WriteLine({});
   ]], {
     i(1)
   })),
+  -- { get; set; }
+  s("{get;", { t "{ get; set; "})
 }

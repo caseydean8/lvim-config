@@ -14,8 +14,9 @@ lvim.format_on_save.enabled = false
 lvim.colorscheme = "lunar"
 vim.opt.scrolloff = 13
 vim.opt.cmdheight = 3
--- vim.opt.showcmd = "on"
--- the return the
+vim.opt.showcmd = true
+vim.opt.showmode = true -- show INSERT/VISUAL mode
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -27,7 +28,7 @@ lvim.keys.insert_mode.jk = "<ESC>"
 lvim.keys.insert_mode.kj = "<ESC>"
 lvim.keys.insert_mode[";;"] = "<ESC>A"
 lvim.keys.insert_mode.jj = "∆"
-lvim.keys.insert_mode["<C-o>"] = "<ESC>vbc"
+-- lvim.keys.insert_mode["<C-o>"] = "<ESC>vbc"
 -- lvim.keys.insert_mode["::"] = "<ESC>:"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -86,7 +87,7 @@ lvim.keys.normal_mode["-"] = ":split<CR>"
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
-  "c",
+  -- "c",
   "c_sharp",
   "javascript",
   "json",
@@ -196,8 +197,6 @@ lvim.plugins = {
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
     run = "npm install --prefix server",
   },
-  { "lunarvim/Onedarker.nvim" },
-  { "martinsione/darkplus.nvim" },
   { "EdenEast/nightfox.nvim" },
   { "ellisonleao/gruvbox.nvim" },
   { "nyoom-engineering/oxocarbon.nvim" },
@@ -209,8 +208,8 @@ lvim.plugins = {
     end,
     requires = {
       "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
+      -- "nvim-lua/plenary.nvim",
+      -- "nvim-telescope/telescope.nvim"
     }
   },
   -- {
@@ -262,9 +261,7 @@ abbrev_man.setup({
       ["whait"] = "what",
       ["waht"] = "what",
       ["::"] = "<ESC>:",
-      ["cw"] = 'Console.WriteLine("")',
       ["jjj"] = "∆",
-      ["sdd"] = "System.Diagnostics.Debug.WriteLine",
     }
   },
   programming_dictionaries = {
